@@ -10,3 +10,7 @@
 body {
     text-align:  center;
 }
+
+section p {
+    margin: 0px;
+}

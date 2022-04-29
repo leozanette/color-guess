@@ -1,3 +1,5 @@
+localStorage.setItem('placar', '0');
+
 function createCirculos(a) {
     let local = document.getElementById('circulos');
     for (i = 1; i <= a; i += 1) {
@@ -34,6 +36,10 @@ function clicarCirculo() {
     paleta[i].addEventListener('click', function(event) {
         if(event.target.style.backgroundColor == alvo.innerText) {
             texto.innerText = 'Acertou!'
+            let placar = parseInt(localStorage.placar)
+            placar += 3
+            localStorage.placar = placar
+            document.getElementById('score').innerText = placar
         } else {
             texto.innerText = "Errou! Tente novamente!"
         }
@@ -63,3 +69,4 @@ function reset() {
 }
 
 reset()
+
