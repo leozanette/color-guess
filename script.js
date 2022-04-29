@@ -42,7 +42,6 @@ function clicarCirculo() {
 }
 clicarCirculo()
 
-
 function getRGB() {
     let paleta = document.getElementsByClassName('ball');
     let alvo = document.getElementById('rgb-color');
@@ -50,3 +49,17 @@ function getRGB() {
     alvo.innerText = corTexto
 }
 getRGB()
+
+
+function reset() {
+    let reset = document.getElementById('reset-game');
+    reset.addEventListener('click', function() {
+        let texto = document.getElementById('answer')
+        changeColors();
+        getRGB()
+        texto.innerText = 'Escolha uma cor'
+
+    })
+}
+
+reset()
