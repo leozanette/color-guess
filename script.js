@@ -25,3 +25,28 @@ function geraCores() {
     let rgb = 'rgb('+r+','+g+','+b+')'
     return rgb;
 }
+
+function clicarCirculo() {
+    let paleta = document.getElementsByClassName('ball');
+    let alvo = document.getElementById('rgb-color');
+    let texto = document.getElementById('answer')
+    for(i =0; i<paleta.length; i+=1) {
+    paleta[i].addEventListener('click', function(event) {
+        if(event.target.style.backgroundColor == alvo.innerText) {
+            texto.innerText = 'Acertou!'
+        } else {
+            texto.innerText = "Errou! Tente novamente!"
+        }
+    })
+}
+}
+clicarCirculo()
+
+
+function getRGB() {
+    let paleta = document.getElementsByClassName('ball');
+    let alvo = document.getElementById('rgb-color');
+    corTexto = paleta[Math.floor(Math.random()*6)].style.backgroundColor
+    alvo.innerText = corTexto
+}
+getRGB()
