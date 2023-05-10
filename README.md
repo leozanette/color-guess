@@ -1,13 +1,22 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Color Guess
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Esse é um jogo simples para adivinhar a cor correta. O jogador deve tentar adivinhar a cor em RGB, que é gerada aleatoriamente. O jogo apresenta uma interface simples e fácil de usar, além de ter a opção de jogar novamente.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Como jogar
+
+1. Na parte superior da tela, você verá o código de cor RGB.
+2. Escolha a cor que você acha que corresponde ao código RGB apresentado.
+3. Clique na cor escolhida para ver se você acertou.
+4. Se você acertar, sua pontuação aumentará e exibirá uma mensagem de sucesso.
+5. Se você errar, a tela exibirá uma mensagem de erro e você pode tentar novamente.
+6. Após acertar clique no botão reset para jogar novamente.
+
+## Tecnologias usadas
+
+- HTML
+- CSS
+- JavaScript
+
+## Código de cores
+
+O jogo utiliza o código de cores RGB para gerar a cor aleatória que o jogador deve adivinhar.
