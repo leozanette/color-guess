@@ -1,72 +1,67 @@
 localStorage.setItem('placar', '0');
 
 function createCirculos(a) {
-    let local = document.getElementById('circulos');
-    for (i = 1; i <= a; i += 1) {
-        let div = document.createElement('div');
-        div.className = 'ball'
-        local.appendChild(div)
-
-    }
+  const local = document.getElementById('circulos');
+  for (let i = 1; i <= a; i += 1) {
+    const div = document.createElement('div');
+    div.className = 'ball';
+    local.appendChild(div);
+  }
 }
 createCirculos(6);
 
-
 function changeColors() {
-    let paleta = document.getElementsByClassName('ball');
-    for(i = 0; i <paleta.length; i+=1) {
-        let cor = geraCores()
-        paleta[i].style.backgroundColor = cor
-    }
+  const paleta = document.getElementsByClassName('ball');
+  for (let i = 0; i < paleta.length; i += 1) {
+    const cor = geraCores();
+    paleta[i].style.backgroundColor = cor;
+  }
 }
-changeColors()
+changeColors();
 function geraCores() {
-    let r = Math.floor(Math.random()*256);
-    let g = Math.floor(Math.random()*256);
-    let b = Math.floor(Math.random()*256);
-    let rgb = 'rgb('+r+','+g+','+b+')'
-    return rgb;
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const rgb = `rgb(${r},${g},${b})`;
+  return rgb;
 }
 
 function clicarCirculo() {
-    let paleta = document.getElementsByClassName('ball');
-    let alvo = document.getElementById('rgb-color');
-    let texto = document.getElementById('answer')
-    for(i =0; i<paleta.length; i+=1) {
-    paleta[i].addEventListener('click', function(event) {
-        if(event.target.style.backgroundColor == alvo.innerText) {
-            texto.innerText = 'Acertou!'
-            let placar = parseInt(localStorage.placar)
-            placar += 3
-            localStorage.placar = placar
-            document.getElementById('score').innerText = placar
-        } else {
-            texto.innerText = "Errou! Tente novamente!"
-        }
-    })
+  const paleta = document.getElementsByClassName('ball');
+  const alvo = document.getElementById('rgb-color');
+  const texto = document.getElementById('answer');
+  for (let i = 0; i < paleta.length; i += 1) {
+    paleta[i].addEventListener('click', (event) => {
+      if (event.target.style.backgroundColor == alvo.innerText) {
+        texto.innerText = 'Acertou!';
+        let placar = parseInt(localStorage.placar);
+        placar += 3;
+        localStorage.placar = placar;
+        document.getElementById('score').innerText = placar;
+      } else {
+        texto.innerText = 'Errou! Tente novamente!';
+      }
+    });
+  }
 }
-}
-clicarCirculo()
+clicarCirculo();
 
 function getRGB() {
-    let paleta = document.getElementsByClassName('ball');
-    let alvo = document.getElementById('rgb-color');
-    corTexto = paleta[Math.floor(Math.random()*6)].style.backgroundColor
-    alvo.innerText = corTexto
+  const paleta = document.getElementsByClassName('ball');
+  const alvo = document.getElementById('rgb-color');
+  corTexto = paleta[Math.floor(Math.random() * 6)].style.backgroundColor;
+  alvo.innerText = corTexto;
 }
-getRGB()
-
+getRGB();
 
 function reset() {
-    let reset = document.getElementById('reset-game');
-    reset.addEventListener('click', function() {
-        let texto = document.getElementById('answer')
-        changeColors();
-        getRGB()
-        texto.innerText = 'Escolha uma cor'
-
-    })
+  const reset = document.getElementById('reset-game');
+  reset.addEventListener('click', () => {
+    const texto = document.getElementById('answer');
+    changeColors();
+    getRGB();
+    texto.innerText = 'Escolha uma cor';
+  });
 }
 
-reset()
-
+reset();
